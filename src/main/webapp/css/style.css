@@ -1,0 +1,290 @@
+@charset "UTF-8";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 17px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 35px;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+}
+
+
+.navbar .btnLogin-popup {
+    background: transparent;
+    border: 3px solid white;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    border-radius: 6px;
+    transition: .5s;
+    margin-right: -20px;
+}
+
+.navbar .btnLogin-popup:hover {
+    background: white;
+    color: black;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(images/scenery.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.form {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    overflow: hidden;
+    transition: transform .5s ease, height .2s ease;
+    transform: scale(0);
+}
+
+.form.active-popup {
+    transform: scale(1);
+}
+
+.form.active {
+    height: 520px;
+
+}
+
+
+h2 {
+    font-size: 40px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    pointer-events: none;
+}
+
+.form .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid black;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: black;
+    font-weight: bold;
+    padding: 0 35px 0 5px;
+}
+
+.bi {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: black;
+    line-height: 57px;
+}
+
+.remember {
+    font-size: 17px;
+    color: black;
+    font-weight: 550;
+    display: flex;
+    justify-content: space-between;
+    margin: -15px 0 18px;
+    margin-top: 8px;
+}
+
+.remember input {
+    accent-color: black;
+    margin-right: 7px;
+}
+
+.remember a {
+    color: black;
+    text-decoration: none;
+}
+
+.remember a:hover {
+    text-decoration: underline;
+
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background-color: black;
+    color: white;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.login-register {
+    color: black;
+    font-weight: 550;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: -15px;
+}
+
+.login-register p a {
+    color: black;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+.bi-x {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    font-size: 2em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.bi-x:hover {
+    background: red;
+}
+
+.form .form-box.register {
+    position: absolute;
+    transition: 0;
+    transform: translateX(400px);
+}
+
+.login-link {
+    color: black;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.register .register-link:hover {
+    text-decoration: underline;
+}
+
+.form .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+
+.form.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+
+.form.active .form-box.register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
